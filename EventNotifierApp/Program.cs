@@ -2,10 +2,7 @@
 using DataAccessLibrary.Models;
 using DataAccessLibrary.Options;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Org.BouncyCastle.Security;
 using SendSMTPLibrary;
-using System.Runtime.CompilerServices;
 
 public class Program
 {
@@ -22,12 +19,6 @@ public class Program
         var fileAccess = new TextFileDataAccess();
         
         var fileContents = fileAccess.ReadAllRecords(_textFile);
-
-        //Console.WriteLine($"Todays Month: {DateTime.Now.Month}  Todays Day: {DateTime.Now.Day}");
-        //foreach (var record in fileContents)
-        //{
-        //    Console.WriteLine($"Date: {record.EventDate} Subject: {record.Subject} Event: {record.Event}");
-        //}
 
         CheckEventDateMatchesTodaysDate(fileContents);
 

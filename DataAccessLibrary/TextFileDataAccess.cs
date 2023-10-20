@@ -1,32 +1,9 @@
 ﻿using DataAccessLibrary.Models;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 
 namespace DataAccessLibrary
 {
     public class TextFileDataAccess
     {
-        //private static IConfiguration _config;
-        //private static string _textFile;
-        
-        //public void InitializeConfiguration()
-        //{
-        //    /* Build the path to the appsettings.json file */
-        //    var builder = new ConfigurationBuilder()
-        //    .SetBasePath(Directory.GetCurrentDirectory())
-        //    .AddJsonFile("appsettings.json");
-
-        //    _config = builder.Build();
-
-        //    //_textFile = _config.GetValue<string>("CSVFile");
-        //    _textFile = _config.GetValue<string>("TextFile");
-        //}
-
         public List<EventsModel> ReadAllRecords(string _textFile)
         {
 

@@ -1,11 +1,5 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 using DataAccessLibrary.Options;
 
 namespace SendSMTPLibrary
@@ -32,7 +26,6 @@ namespace SendSMTPLibrary
             using (var client = new SmtpClient())
             {
                 client.Connect(emailSettings.SmtpHost, emailSettings.SmtpPort, emailSettings.SmtpUseSSL);
-                //client.Authenticate(emailSettings.AuthenticateUserName, emailSettings.AuthenticatePw);
                 client.Authenticate(emailSettings.AuthenticateUserName, emailSettings.AuthenticatePw);
 
                 client.Send(message);
