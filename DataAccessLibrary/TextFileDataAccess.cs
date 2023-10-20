@@ -11,23 +11,23 @@ namespace DataAccessLibrary
 {
     public class TextFileDataAccess
     {
-        private static IConfiguration _config;
-        private static string _textFile;
+        //private static IConfiguration _config;
+        //private static string _textFile;
         
-        public void InitializeConfiguration()
-        {
-            /* Build the path to the appsettings.json file */
-            var builder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json");
+        //public void InitializeConfiguration()
+        //{
+        //    /* Build the path to the appsettings.json file */
+        //    var builder = new ConfigurationBuilder()
+        //    .SetBasePath(Directory.GetCurrentDirectory())
+        //    .AddJsonFile("appsettings.json");
 
-            _config = builder.Build();
+        //    _config = builder.Build();
 
-            //_textFile = _config.GetValue<string>("CSVFile");
-            _textFile = _config.GetValue<string>("TextFile");
-        }
+        //    //_textFile = _config.GetValue<string>("CSVFile");
+        //    _textFile = _config.GetValue<string>("TextFile");
+        //}
 
-        public List<EventsModel> ReadAllRecords()
+        public List<EventsModel> ReadAllRecords(string _textFile)
         {
 
             if (File.Exists(_textFile) == false)
@@ -69,7 +69,7 @@ namespace DataAccessLibrary
             return output;
         }
 
-        public void WriteAllRecords(List<EventsModel> events)
+        public void WriteAllRecords(List<EventsModel> events, string _textFile)
         {
             var lines = new List<string>();
 
